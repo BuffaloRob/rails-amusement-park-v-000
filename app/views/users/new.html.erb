@@ -1,0 +1,13 @@
+<h1>Sign Up</h1>
+
+<%= form_for(@user) do |f| %>
+  <%= f.text_field :name, placeholder: 'Enter your name' %><br>
+  <%= f.password_field :password, placeholder: 'Enter your password' %><br>
+  <%= f.number_field :height, placeholder: 'Enter your height' %><br>
+  <%= f.number_field :happiness, placeholder: 'Enter your happiness' %><br>
+  <%= f.number_field :nausea, placeholder: 'Enter your nausea' %><br>
+  <%= f.number_field :tickets, placeholder: 'Enter your tickets' %><br>
+  <%= f.label :admin, "Check if you're an admin" %>
+  <%= f.check_box :admin %><br>
+  <%= f.submit "Create User" %>
+<% end %>
