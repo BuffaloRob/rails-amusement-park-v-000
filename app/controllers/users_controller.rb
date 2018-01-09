@@ -10,7 +10,7 @@ class UsersController < ApplicationController
     # @user.password = params[:user][:password]
     if @user.save
       session[:user_id] = @user.id
-      raise params.inspect
+      # raise params.inspect
       redirect_to user_path(@user)
     else
       render :new
@@ -21,7 +21,8 @@ class UsersController < ApplicationController
   end
 
   def show
-    
+    @message = params[:message] if params[:message]
+    @message ||= false
   end
 
   def edit
@@ -36,7 +37,7 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:name, :password, :nausea, :happiness, :tickets, :height,:admin)
+    params.require(:user).permit(:name, :password, :nausea, :happiness, :tickets, :height, :admin)
   end
 
 end
