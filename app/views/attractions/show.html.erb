@@ -1,0 +1,16 @@
+<% if @user.admin %>
+  <h1>ADMIN</h1>
+  <h3>Name: <%= @attraction.name %></h3>
+  <p>Ticket requirements: <%= @attraction.tickets %></p>
+  <p>Height requirements: <%= @attraction.min_height %></p>
+  <p>Nausea Rating: <%= @attraction.nausea_rating %></p>
+  <p>Happiness Rating: <%= @attraction.happiness_rating %></p>
+  <p><%= link_to "Show #{@attraction.name}", user_path(@user) %></p>
+<% end %>
+
+  <h3>Name: <%= @attraction.name %></h3>
+  <p>Ticket requirements: <%= @attraction.tickets %></p>
+  <p>Height requirements: <%= @attraction.min_height %></p>
+  <p>Nausea Rating: <%= @attraction.nausea_rating %></p>
+  <p>Happiness Rating: <%= @attraction.happiness_rating %></p>
+  <p><%= link_to 'Go on this ride', user_path(@user) %></p>

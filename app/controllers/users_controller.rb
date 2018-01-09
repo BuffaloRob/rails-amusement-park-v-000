@@ -15,6 +15,7 @@ class UsersController < ApplicationController
     else
       render :new
     end
+  end
 
   def update
     ##
@@ -26,8 +27,6 @@ class UsersController < ApplicationController
   end
 
   def edit
-  end
-
   end
 
   private
