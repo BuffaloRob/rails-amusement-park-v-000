@@ -15,13 +15,15 @@ class AttractionsController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
-    @message = params[:message] if params[:message]
-    @message ||= false    
+    @ride = Ride.new    
   end
 
   def update
-    
+    if @attraction.update(attraction_params)
+      redirect_to attraction_path(@attraction)
+    else
+      render :edit
+    end
   end
 
   def edit

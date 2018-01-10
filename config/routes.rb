@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  post 'rides/new' => "rides#new"
+
   root 'static_pages#home'
 
   get '/signin' => "sessions#new"
