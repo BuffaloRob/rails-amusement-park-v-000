@@ -22,8 +22,12 @@ class UsersController < ApplicationController
   end
 
   def show
-    @message = params[:message] if params[:message]
-    @message ||= false
+    if session[:user_id] == @user.id
+      @message = params[:message] if params[:message]
+      @message ||= false
+    else
+      redirect_to root_path
+    end
   end
 
   def edit
